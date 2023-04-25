@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript com HTML e CSS</title>
+	<style type="text/css">
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			color: #333;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		p {
+			margin-bottom: 10px;
+		}
+		label {
+			display: block;
+			margin-bottom: 5px;
+		}
+		input[type="text"] {
+			padding: 5px;
+			font-size: 16px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		button {
+			padding: 5px 10px;
+			background-color: #4CAF50;
+			color: #fff;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<h1>JavaScript com HTML e CSS</h1>
+	<p>Informe um número para calcular o cubo:</p>
+	<label for="numeroUsuario">Número:</label>
+	<input type="text" id="numeroUsuario">
+	<button onclick="calcularCubo()">Calcular Cubo</button>
+	<p id="resultadoCubo"></p>
+    <p>Converter graus Fahrenheit para Celsius:</p>
+<label for="tempF">Temperatura em Fahrenheit:</label>
+<input type="text" id="tempF">
+<button onclick="converterFahrenheitParaCelsius()">Converter</button>
+<p id="resultadoTemp"></p>
+
+<p>Calcular área de um triângulo:</p>
+<label for="base">Base:</label>
+<input type="text" id="base">
+<label for="altura">Altura:</label>
+<input type="text" id="altura">
+<button onclick="calcularAreaTriangulo()">Calcular Área</button>
+<p id="resultadoTriangulo"></p>
+
+<p>Calcular área e perímetro de um círculo:</p>
+<label for="raio">Raio:</label>
+<input type="text" id="raio">
+<button onclick="calcularAreaPerimetroCirculo()">Calcular</button>
+<p id="resultadoCirculo"></p>
+
+<p>Calcular 5% de desconto:</p>
+<label for="valor">Valor:</label>
+<input type="text" id="valor">
+<button onclick="calcularDesconto()">Calcular Desconto</button>
+<p id="resultadoDesconto"></p>
+
+<p>Verificar se é maior de idade ou menor:</p>
+<label for="anoNascimento">Ano de Nascimento:</label>
+<input type="text" id="anoNascimento">
+<button onclick="verificarMaioridade()">Verificar</button>
+<p id="resultadoMaioridade"></p>
+
+<p>Calcular quantidade de combustível:</p>
+<label for="dinheiro">Dinheiro:</label>
+<input type="text" id="dinheiro">
+<button onclick="calcularCombustivel()">Calcular</button>
+<p id="resultadoCombustivel"></p>
+
+<script type="text/javascript">
+	function cubo(numero) {
+		return numero * numero * numero;
+	}
+
+	function calcular()
+
+    function cubo(numero) {
+  return numero * numero * numero;
+}
+
+var numeroUsuario = prompt("Digite um número:");
+var cuboUsuario = cubo(numeroUsuario);
+
+alert("O cubo de " + numeroUsuario + " é " + cuboUsuario);
+
+function fahrenheitToCelsius(tempF) {
+    var tempC = (tempF - 32) * 5/9;
+    return tempC;
+  }
+  
+  var tempF = prompt("Digite a temperatura em graus Fahrenheit:");
+  var tempC = fahrenheitToCelsius(tempF);
+  
+  alert(tempF + "°F é equivalente a " + tempC + "°C");
+
+  function calcularAreaTriangulo(base, altura) {
+    var area = (base * altura) / 2;
+    return area;
+  }
+  
+  var base = prompt("Digite o valor da base do triângulo:");
+  var altura = prompt("Digite o valor da altura do triângulo:");
+  
+  var areaTriangulo = calcularAreaTriangulo(base, altura);
+  
+  alert("A área do triângulo é: " + areaTriangulo);
+  
+  function calcularAreaPerimetroCirculo(raio) {
+    var area = Math.PI * Math.pow(raio, 2);
+    var perimetro = 2 * Math.PI * raio;
+    return [area, perimetro];
+  }
+  
+  var raio = prompt("Digite o valor do raio do círculo:");
+  
+  var resultados = calcularAreaPerimetroCirculo(raio);
+  var area = resultados[0];
+  var perimetro = resultados[1];
+  
+  alert("A área do círculo é: " + area + "\nO perímetro do círculo é: " + perimetro);
+  
+  function calcularDesconto(valor) {
+    var desconto = valor * 0.05;
+    return desconto;
+  }
+  
+  function verificarMaioridade(anoNascimento) {
+    var dataAtual = new Date();
+    var idade = dataAtual.getFullYear() - anoNascimento;
+    
+    if (idade >= 18) {
+      return "Maior de idade";
+    } else {
+      return "Menor de idade";
+    }
+  }
+    
+  function calcularCombustivel(dinheiro) {
+    const precoLitro = 5.0;
+    const kmPorLitro = 20.0;
+  
+    const litros = dinheiro / precoLitro;
+    const km = litros * kmPorLitro;
+  
+    return [litros, km];
+  }
+  
+  const dinheiro = prompt("Quanto dinheiro você tem?");
+  
+  const resultados = calcularCombustivel(parseFloat(dinheiro));
+  
+  alert(`Com R$ ${dinheiro} você pode comprar ${resultados[0].toFixed(2)} litros de combustível e andar ${resultados[1].toFixed(2)} km.`);
+  
